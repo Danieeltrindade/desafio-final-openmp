@@ -1,0 +1,6 @@
+# Valores exatamente nas fronteiras das classes (estatura: 8 cm, peso: 4 kg)
+140.0 50.0
+147.9 53.9
+148.0 54.0
+155.9 57.9
+156.0 58.0

@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar (OpenMP + sequencial)",
+      "type": "shell",
+      "command": "gcc -O2 -Wall -Wextra -fopenmp src/cv_openmp.c -o cv_openmp -lm; gcc -O2 -Wall -Wextra -Wno-unknown-pragmas src/cv_openmp.c -o cv_sequencial -lm",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Executar (1000 pessoas)",
+      "type": "shell",
+      "command": "./cv_openmp dados/dados.txt",
+      "windows": { "command": ".\\cv_openmp.exe dados\\dados.txt" },
+      "dependsOn": "Compilar (OpenMP + sequencial)",
+      "problemMatcher": []
+    },
+    {
+      "label": "Executar sequencial",
+      "type": "shell",
+      "command": "./cv_sequencial dados/dados.txt",
+      "windows": { "command": ".\\cv_sequencial.exe dados\\dados.txt" },
+      "dependsOn": "Compilar (OpenMP + sequencial)",
+      "problemMatcher": []
+    },
+    {
+      "label": "Testes",
+      "type": "shell",
+      "command": "python3 tests/testes.py",
+      "windows": { "command": "python tests\\testes.py" },
+      "dependsOn": "Compilar (OpenMP + sequencial)",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Benchmark completo",
+      "type": "shell",
+      "command": "./cv_openmp dados/dados.txt --benchmark resultados/benchmark.csv",
+      "windows": { "command": ".\\cv_openmp.exe dados\\dados.txt --benchmark resultados\\benchmark.csv" },
+      "dependsOn": "Compilar (OpenMP + sequencial)",
+      "problemMatcher": []
+    },
+    {
+      "label": "Gerar graficos",
+      "type": "shell",
+      "command": "python3 scripts/graficos.py",
+      "windows": { "command": "python scripts\\graficos.py" },
+      "problemMatcher": []
+    }
+  ]
+}

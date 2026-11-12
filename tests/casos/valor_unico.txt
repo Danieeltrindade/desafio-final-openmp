@@ -1,0 +1,4 @@
+# Todas as pessoas iguais: desvio padrao e CV devem ser zero
+170.0 70.0
+170.0 70.0
+170.0 70.0

@@ -1,0 +1,11 @@
+data_utc=2026-11-12T23:21:25Z
+compilador=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+flags=-O2 -Wall -Wextra -fopenmp (sequencial: sem -fopenmp)
+processador=Intel(R) Xeon(R) Processor @ 2.10GHz
+CPU(s): 2
+Thread(s) per core: 1
+Core(s) per socket: 2
+Hypervisor vendor: KVM
+sistema=Ubuntu 24.04.5 LTS (kernel 6.18.44-fc-v378)
+medicao=omp_get_wtime(); 7 rodadas por configuracao, ordem alternada, 1 aquecimento
+dados_sha256=34ed58f10eb2af4205130ffcb0a9fb1bd8eac2732663bed622528e577a083b8b
